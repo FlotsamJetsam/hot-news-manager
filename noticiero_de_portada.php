@@ -125,7 +125,7 @@ add_shortcode('ndp_hemeroteca', 'ndport_dibuja_noticias_en_hemeroteca');
 add_action('admin_menu', 'ndport_registrar_adminmenu' );
 
 function ndport_registrar_adminmenu(){
-	add_menu_page(__('Front Page News Items Administration', 'noticiero_de_portada'), __('Hot News Admin', 'noticiero_de_portada'), 'manage_options', 'menu_noticias_portada', 'ndport_cargar_panel_administracion', plugins_url('noticiero_de_portada/imagenes/icono_menu_admin.jpg'));
+	add_menu_page(__('Front Page News Items Administration', 'noticiero_de_portada'), __('Hot News Admin', 'noticiero_de_portada'), 'manage_options', 'menu_noticias_portada', 'ndport_cargar_panel_administracion', plugins_url('hot-news-manager/imagenes/icono_menu_admin.jpg'));
 	add_submenu_page('menu_noticias_portada', __('Create News Item', 'noticiero_de_portada'), __('Create News Item', 'noticiero_de_portada'), 'manage_options', 'crear_modificar_noticias', 'ndport_cargar_form_crear_noticia');
 	add_submenu_page('menu_noticias_portada', __('Hot News Setup', 'noticiero_de_portada'), __('Hot News Setup', 'noticiero_de_portada'), 'manage_options', 'configurar_noticias', 'ndport_cargar_form_parametros');
 }//final de registrar_adminpage_noticias_portada
