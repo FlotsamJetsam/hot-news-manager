@@ -1,0 +1,27 @@
+From 2eb1c797e16cdb51e89531c20edf58796be93c1f Mon Sep 17 00:00:00 2001
+From: Edwin Davidson <edavidson@primeinc.com>
+Date: Wed, 12 Aug 2015 15:10:00 -0500
+Subject: [PATCH] Fixed: icono_menu_admin.jpg was not loading as the path was
+ pointing to folder noticiero_de_porada whereas this version of the plugin is
+ in folderhot-news-manager.
+
+---
+ noticiero_de_portada.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/noticiero_de_portada.php b/noticiero_de_portada.php
+index dec716d..ea0fe89 100644
+--- a/noticiero_de_portada.php
++++ b/noticiero_de_portada.php
+@@ -125,7 +125,7 @@ add_shortcode('ndp_hemeroteca', 'ndport_dibuja_noticias_en_hemeroteca');
+ add_action('admin_menu', 'ndport_registrar_adminmenu' );
+ 
+ function ndport_registrar_adminmenu(){
+-	add_menu_page(__('Front Page News Items Administration', 'noticiero_de_portada'), __('Hot News Admin', 'noticiero_de_portada'), 'manage_options', 'menu_noticias_portada', 'ndport_cargar_panel_administracion', plugins_url('noticiero_de_portada/imagenes/icono_menu_admin.jpg'));
++	add_menu_page(__('Front Page News Items Administration', 'noticiero_de_portada'), __('Hot News Admin', 'noticiero_de_portada'), 'manage_options', 'menu_noticias_portada', 'ndport_cargar_panel_administracion', plugins_url('hot-news-manager/imagenes/icono_menu_admin.jpg'));
+ 	add_submenu_page('menu_noticias_portada', __('Create News Item', 'noticiero_de_portada'), __('Create News Item', 'noticiero_de_portada'), 'manage_options', 'crear_modificar_noticias', 'ndport_cargar_form_crear_noticia');
+ 	add_submenu_page('menu_noticias_portada', __('Hot News Setup', 'noticiero_de_portada'), __('Hot News Setup', 'noticiero_de_portada'), 'manage_options', 'configurar_noticias', 'ndport_cargar_form_parametros');
+ }//final de registrar_adminpage_noticias_portada
+-- 
+1.8.4.msysgit.0
+
